@@ -29,8 +29,7 @@ Make sure you have the following installed on your system:
 
 Run the "run_app.sh" script to start the application:
 
-
-    ```./run_app.sh```
+```./run_app.sh```
 
 
 ## Usage
