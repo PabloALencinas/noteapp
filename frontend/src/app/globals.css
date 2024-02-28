@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.gradient-text {
+  background-image: linear-gradient(90deg,#007CF0,#00DFD8);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.tag {
+  border: 1px solid black;
+  background: linear-gradient(90deg, #194d7e, #552774);
+  display: inline-block; 
+  padding: 4px 8px; 
+  margin-right: 8px; 
+}
+
+.note-style {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+
+.create-note-button { 
+  color: white; 
+  border: 1px solid white;
+  padding: 6px 12px; 
+  cursor: pointer; 
+  width: 150px;
+  height: 50px;
+  transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+.create-note-button:hover {
+  background: linear-gradient(90deg, #007CF0, #00DFD8);
+  border: 1px solid black;
+  color: black;
+}
+
+.all-notes-button { 
+  color: white; 
+  border: 1px solid white;
+  padding: 6px 12px; 
+  cursor: pointer; 
+  width: 150px;
+  height: 50px;
+  transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+.all-notes-button:hover {
+  background: linear-gradient(90deg, #92f759, #00DFD8);
+  border: 1px solid black;
+  color: black;
+}
+
+.archived-notes-button { 
+  color: white; 
+  border: 1px solid white;
+  padding: 6px 12px; 
+  cursor: pointer; 
+  width: 150px;
+  height: 50px;
+  transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+.archived-notes-button:hover {
+  background: linear-gradient(90deg, #fffc5e, #f0962f);
+  border: 1px solid black;
+  color: black;
+}
+
+.unarchived-notes-button { 
+  color: white; 
+  border: 1px solid white;
+  padding: 6px 12px; 
+  cursor: pointer; 
+  width: 150px;
+  height: 50px;
+  transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+.unarchived-notes-button:hover {
+  background: linear-gradient(90deg, #ef86f3, #881feb);
+  border: 1px solid black;
+  color: black;
+}
+
+.title {
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+
+.notes-container {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.notes-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 44px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center; 
+}
+
+.search-container input {
+  flex: 1; 
+  height: 50px; 
+  padding: 5px; 
+  border: 1px solid white; 
+  background-color: black; 
+  color: white; 
+  font-size: 1rem; 
+}
+
+.search-container button {
+  height: 50px; 
+  padding: 0 20px; 
+  border: 1px solid white; 
+  background-color: black; 
+  color: white; 
+  font-size: 1rem; 
+}
+
+.card-style {
+  width: 450px;
+  height: 360px;
+}
+
+.content-style {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+
+.edit-button { 
+  color: white; 
+  border: 1px solid white;
+  padding: 6px 12px; 
+  cursor: pointer; 
+  width: 70px;
+  height: 41px;
+  transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+.edit-button:hover {
+  background: linear-gradient(90deg, #72dac5, #00d68f);
+  border: 1px solid black;
+  color: black;
+}
+
+.delete-button { 
+  color: white; 
+  border: 1px solid white;
+  padding: 6px 12px; 
+  cursor: pointer; 
+  width: 79px;
+  height: 41px;
+  transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+.delete-button:hover {
+  background: linear-gradient(90deg, #ff7675, #d63031);
+  border: 1px solid black;
+  color: black;
+}
+
+.delete-tag-button {
+  color: white; 
+  border: 1px solid white;
+  padding: 6px 12px; 
+  cursor: pointer; 
+  width: 105px;
+  height: 41px;
+  transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+.delete-tag-button:hover {
+  background: linear-gradient(90deg, #4bebeb, #3643fc);
+  border: 1px solid black;
+  color: black;
+}
+
+.add-tag-button {
+  color: white; 
+  border: 1px solid white;
+  padding: 6px 12px; 
+  cursor: pointer; 
+  width: 105px;
+  height: 41px;
+  transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+.add-tag-button:hover {
+  background: linear-gradient(90deg, #4bebeb, #3643fc);
+  border: 1px solid black;
+  color: black;
+}
+
+.expand-button { 
+  color: white; 
+  border: 1px solid white;
+  padding: 6px 12px; 
+  cursor: pointer; 
+  width: 105px;
+  height: 41px;
+  transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+.expand-button:hover {
+  background: linear-gradient(90deg, #a29bfe, #6c5ce7);
+  border: 1px solid black;
+  color: black;
+}
+
+.save-button { 
+  color: white; 
+  border: 1px solid white;
+  padding: 6px 12px; 
+  cursor: pointer; 
+  width: 70px;
+  height: 41px;
+  transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+.save-button:hover {
+  background: linear-gradient(90deg, #a29bfe, #6c5ce7);
+  border: 1px solid black;
+  color: black;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-buttons {
+  display: flex;
+}
+
+.right-buttons {
+  display: flex;
+}
+
+.search-button { 
+  color: white; 
+  border: 1px solid white;
+  padding: 6px 12px; 
+  cursor: pointer; 
+  width: 150px;
+  height: 50px;
+  transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+.search-button:hover {
+  background: linear-gradient(90deg, #fd2121, #fdaa4c);
+  border: 1px solid black;
+  color: black;
+}
+
+.submit-tag-button { 
+  color: white; 
+  border: 1px solid white;
+  padding: 6px 12px; 
+  cursor: pointer; 
+  width: 105px;
+  height: 42px;
+  transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+.submit-tag-button:hover{
+  background: linear-gradient(90deg, #4bebeb, #3643fc);
+  border: 1px solid black;
+  color: black;
+}
