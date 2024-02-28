@@ -1,0 +1,4 @@
+CREATE DATABASE notesappdb;
+
+GRANT ALL PRIVILEGES ON notesappdb.* TO 'root'@'%' IDENTIFIED BY 'pablo26.-';
+FLUSH PRIVILEGES;
